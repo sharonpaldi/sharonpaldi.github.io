@@ -2689,6 +2689,17 @@ body {
 	padding: 6em 0 6em 0;
 }
 
+.form-wrapper {
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+textarea {
+  direction: rtl;
+  text-align: right;
+}
+
 /* Sidebar + Content */
 
 .sidebar h2.major {
