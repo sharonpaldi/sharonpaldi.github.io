@@ -2313,6 +2313,14 @@ table.default thead {
 	text-align: center;
 }
 
+.box.highlight::before {
+	content: '';
+	display: block;
+	height: 5px;
+	margin: 0 0 2.5em;
+	background: var(--main-stripe-color);
+}
+
 .box.highlight h2 {
 	font-size: 3em;
 	margin: 0 0 0.25em 0;
@@ -2326,6 +2334,67 @@ table.default thead {
 .box.highlight>p {
 	font-size: 1.2em;
 	text-align: right;
+}
+
+.box.highlight .about-content {
+	direction: rtl;
+	text-align: right;
+}
+
+.box.highlight .about-row {
+	display: grid;
+	align-items: center;
+	gap: clamp(2rem, 4vw, 4rem);
+	margin: clamp(3rem, 7vw, 6rem) 0;
+	direction: ltr;
+}
+
+.box.highlight .about-row--photo-left {
+	grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	grid-template-areas: "photo copy";
+}
+
+.box.highlight .about-row--photo-right {
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+	grid-template-areas: "copy photo";
+}
+
+.box.highlight .about-copy {
+	grid-area: copy;
+	min-width: 0;
+	direction: rtl;
+	text-align: right;
+}
+
+.box.highlight .about-copy>p {
+	font-size: 1.2em;
+	margin-bottom: 1.1em;
+}
+
+.box.highlight .about-photo {
+	grid-area: photo;
+	overflow: hidden;
+	margin: 0;
+	border-radius: 1.25rem;
+	box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.14);
+}
+
+.box.highlight .about-photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 3 / 4;
+	object-fit: cover;
+	object-position: center 30%;
+}
+
+.box.highlight .about-ending {
+	margin-top: clamp(3rem, 7vw, 6rem);
+}
+
+.box.highlight .about-photo--center {
+	width: min(100%, 18rem);
+	margin: 2.5rem auto;
 }
 
 .box.feature {
@@ -2462,6 +2531,10 @@ table.default thead {
 
 body {
 	padding-top: 3.25em;
+}
+
+body.homepage {
+	padding-top: 0;
 }
 
 #nav {
@@ -2681,8 +2754,9 @@ body {
 /* Main */
 
 #main {
+	--main-stripe-color: #b1ddab;
 	background: #fff;
-	border-top: solid 5px #b1ddab;
+	border-top: solid 5px var(--main-stripe-color);
 	border-bottom: solid 5px #c1cac5;
 	border-top-width: 35px;
 	border-bottom-width: 10px;
@@ -2805,6 +2879,10 @@ textarea {
 		text-align: right;
 	}
 
+	.box.highlight .about-copy>p {
+		font-size: 1.3em;
+	}
+
 	.box.post h3 {
 		font-size: 2.5em;
 	}
@@ -2872,6 +2950,17 @@ textarea {
 
 	.box br {
 		display: none;
+	}
+
+	.box.highlight .about-row {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-areas: "copy" "photo";
+		gap: 2rem;
+	}
+
+	.box.highlight .about-photo:not(.about-photo--center) {
+		width: min(100%, 24rem);
+		justify-self: center;
 	}
 
 	/* Header */
