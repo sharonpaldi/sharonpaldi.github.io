@@ -1,4 +1,4 @@
-TXT by HTML5 UP - Tzur Paldi
+TXT by HTML5 UP - Tzur Paldi powered by Bedekbyte(TM)
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 
@@ -16,6 +16,21 @@ Feedback, bug reports, and comments are not only welcome, but strongly encourage
 
 AJ
 aj@lkn.io | @ajlkn
+
+---
+
+This is a static website, so you can serve it with Python:
+
+```powershell
+cd C:\Users\Tzur\source\repos\sharonWebsite\sharonpaldi.github.io
+python -m http.server 8000
+```
+
+Then open **http://localhost:8000** in your browser. Stop the server with **Ctrl+C**.
+
+Alternatively, in VS Code, open the `sharonpaldi.github.io` folder and use the **Live Server** extension to launch `index.html`.
+
+---
 
 
 Credits:
